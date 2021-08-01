@@ -15,11 +15,13 @@ public class Main {
     }
 
     public static int power(int x, int n){
-        if(x == 0){
-            return 0;
-        }else if (n==0){
+        if(n==0){
             return 1;
         }
-        return x*power(x, n-1);
+        int  p = power(x, n/2);
+        if((n & 1)==1){
+            return p*p*x;
+        }
+        return p*p;
     }
 }
